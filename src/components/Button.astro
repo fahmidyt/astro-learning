@@ -1,0 +1,17 @@
+---
+import { cn } from "../utils";
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<button
+  class={cn(
+    "font-semibold bg-emerald-400 hover:bg-emerald-300 transition-all text-black-shade px-6 py-4 rounded-[10px] shadow-lg",
+    className,
+  )}
+>
+  <slot />
+</button>

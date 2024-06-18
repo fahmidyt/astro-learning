@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+
+import H1 from "../components/Typography/H1.astro";
+import H2 from "../components/Typography/H2.astro";
+
+import localMeImage from "../assets/me.jpeg";
+---
+
+<Layout title="About me">
+  <main class="container mx-auto flex justify-center min-h-screen items-center">
+    <Card className="w-full max-w-[370px]">
+      <div class="relative">
+        <Image
+          height={370}
+          width={370}
+          class="w-full aspect-square object-cover block z-10"
+          src={localMeImage}
+          alt="me"
+          format="jpeg"
+        />
+
+        <div
+          class="absolute bottom-0 w-full h-36 z-20 bg-gradient-to-b from-transparent dark:to-black-shade to-card"
+        >
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-8 px-12 py-9">
+        <div class="flex flex-col items-center gap-1">
+          <H1 className="text-center">Fahmi</H1>
+          <H2 className="text-center">Software Engineer</H2>
+          <H2 className="text-center flex items-center justify-center gap-1">
+            <Icon name="mdi:map-marker" /> Jakarta, ID
+          </H2>
+        </div>
+
+        <Button className="flex items-center gap-2">
+          <Icon name="mdi:contacts" /> Get in touch
+        </Button>
+      </div>
+    </Card>
+  </main>
+</Layout>
