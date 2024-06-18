@@ -6,5 +6,10 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), tailwind(), icon()]
+  integrations: [preact(), tailwind(), icon()],
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/sharp"
+    }
+  }
 });
